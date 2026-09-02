@@ -1,0 +1,19 @@
+name: delay-lab
+
+topology:
+  nodes:
+    client:
+      kind: linux
+      image: nicolaka/netshoot
+
+    router:
+      kind: linux
+      image: nicolaka/netshoot
+
+    server:
+      kind: linux
+      image: nicolaka/netshoot
+
+  links:
+    - endpoints: ["client:eth1", "router:eth1"]
+    - endpoints: ["router:eth2", "server:eth1"]
