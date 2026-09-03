@@ -21,7 +21,7 @@ The client has the ip address `10.0.1.2` and connects to the router through the 
 The router's eth2 interface has the address `10.0.2.1`. The server has the address `10.0.2.2` and uses `10.0.2.1` as its gateway
 No artificial delay, packet loss, jitter, or bandwidth limitation was applied during this experiment.
 
-##Tests 
+## Tests 
 
 I used `ping` to measure the baseline round-trip time(RTT) between the client and the server.
 I also used `traceroute` to verify the path taken by the packets and confirm that traffic passes through the router.
