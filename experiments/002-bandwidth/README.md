@@ -1,4 +1,4 @@
-# Experiment 002 - Bandwidth Limitation
+# Experiment 002 - Bandwidth Limitation and Congestion
 
 ## Objective
 
