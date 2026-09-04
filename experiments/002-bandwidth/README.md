@@ -40,15 +40,15 @@ exceeds the available transmission capacity.
 
 ## Topology
 
-​```text
- Client                  Router                  Server
+```text
+Client                  Router                  Server
 10.0.1.2                10.0.1.1               10.0.2.2
    |                        |                       |
-   +-------- eth1 ----------+---------- eth2 -------+
+   +-------- eth1 ----------+---------- eth2 ------+
                                       ^
                                       |
                               bandwidth limit
-​```
+```
 
 ## Methodology
 
@@ -68,24 +68,24 @@ limited measurement.
 
 Check the current queueing discipline:
 
-​```bash
+```bash
 sudo docker exec clab-delay-lab-router tc qdisc show dev eth2
-​```
+```
 
 Expected baseline:
 
-​```text
+```text
 qdisc noqueue ...
-​```
+```
 
 ### Bandwidth limitation
 
 The router's `eth2` interface will be configured with a Token Bucket Filter
 (TBF) to limit the outgoing rate.
 
-​```bash
+```bash
 sudo docker exec clab-delay-lab-router tc qdisc add dev eth2 root tbf rate 1mbit burst 32kb latency 400ms
-​```
+```
 
 ## Tests
 
@@ -93,25 +93,25 @@ sudo docker exec clab-delay-lab-router tc qdisc add dev eth2 root tbf rate 1mbit
 
 Run `iperf3` without the artificial bandwidth limitation:
 
-​```bash
+```bash
 ...
-​```
+```
 
 ### Limited test
 
 Run the same test after applying the 1 Mbit/s limitation:
 
-​```bash
+```bash
 ...
-​```
+```
 
 ### Traffic-control statistics
 
 Inspect the qdisc statistics:
 
-​```bash
+```bash
 sudo docker exec clab-delay-lab-router tc -s qdisc show dev eth2
-​```
+```
 
 ## Results
 
