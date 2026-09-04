@@ -41,8 +41,7 @@ exceeds the available transmission capacity.
 ## Topology
 
 ​```text
-
-Client                  Router                  Server
+ Client                  Router                  Server
 10.0.1.2                10.0.1.1               10.0.2.2
    |                        |                       |
    +-------- eth1 ----------+---------- eth2 -------+
