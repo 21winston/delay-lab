@@ -187,10 +187,7 @@ The TBF statistics also recorded dropped packets and overlimit events,
 providing additional evidence that the traffic exceeded the configured
 transmission capacity.
 
-The limited test also continued receiving traffic until approximately
-`10.52 seconds`, despite the sender stopping at 10 seconds. This is consistent
-with packets remaining in the traffic-control queue and being transmitted
-after the sender had finished generating traffic.
+The limited test also continued receiving traffic until approximately `10.52 seconds`, despite the sender stopping at 10 seconds. This indicates that some packets continued to arrive after the sender had finished transmitting, consistent with the effects of queueing introduced by the bandwidth limitatio
 
 ## What I Learned
 
